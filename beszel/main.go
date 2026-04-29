@@ -29,7 +29,8 @@ var hubCmd = &cobra.Command{
 
 func init() {
 	// Hub flags
-	hubCmd.Flags().StringP("addr", "a", "0.0.0.0:8090", "Address to listen on (host:port)")
+	// Changed default address to localhost-only for personal use (avoid accidental exposure)
+	hubCmd.Flags().StringP("addr", "a", "127.0.0.1:8090", "Address to listen on (host:port)")
 	hubCmd.Flags().StringP("data-dir", "d", "./beszel_data", "Directory to store data")
 
 	rootCmd.AddCommand(hubCmd)
