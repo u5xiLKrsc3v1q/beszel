@@ -33,6 +33,8 @@ func init() {
 	hubCmd.Flags().StringP("addr", "a", "127.0.0.1:8090", "Address to listen on (host:port)")
 	// Changed default data directory to use a hidden dot-directory to keep home folder tidy
 	hubCmd.Flags().StringP("data-dir", "d", ".beszel_data", "Directory to store data")
+	// Added verbose flag for debugging purposes during local development
+	hubCmd.Flags().BoolP("verbose", "v", false, "Enable verbose logging output")
 
 	rootCmd.AddCommand(hubCmd)
 }
