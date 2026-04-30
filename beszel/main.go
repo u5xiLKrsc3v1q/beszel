@@ -35,6 +35,8 @@ func init() {
 	hubCmd.Flags().StringP("data-dir", "d", ".beszel_data", "Directory to store data")
 	// Added verbose flag for debugging purposes during local development
 	hubCmd.Flags().BoolP("verbose", "v", false, "Enable verbose logging output")
+	// Added log-file flag so I can persist logs to a file instead of just stdout
+	hubCmd.Flags().StringP("log-file", "l", "", "Path to log file (defaults to stdout if not set)")
 
 	rootCmd.AddCommand(hubCmd)
 }
