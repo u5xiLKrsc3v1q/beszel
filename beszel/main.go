@@ -31,7 +31,8 @@ func init() {
 	// Hub flags
 	// Changed default address to localhost-only for personal use (avoid accidental exposure)
 	hubCmd.Flags().StringP("addr", "a", "127.0.0.1:8090", "Address to listen on (host:port)")
-	hubCmd.Flags().StringP("data-dir", "d", "./beszel_data", "Directory to store data")
+	// Changed default data directory to use a hidden dot-directory to keep home folder tidy
+	hubCmd.Flags().StringP("data-dir", "d", ".beszel_data", "Directory to store data")
 
 	rootCmd.AddCommand(hubCmd)
 }
